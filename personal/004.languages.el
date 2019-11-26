@@ -29,21 +29,6 @@
 (add-hook 'flyspell-mode-hook 'flyspell-buffer)
 (add-hook 'org-mode-hook 'flyspell-mode)
 
-;; lsp-mode
-(setq lsp-enable-snippet nil)
-
-;; golang
-(add-hook 'go-mode-hook
-          (lambda ()
-            (lsp-deferred)
-            (setq tab-width 4)
-            (setq indent-tabs-mode 1)
-            (let ((map go-mode-map))
-              (define-key map (kbd "M-.") 'godef-jump))
-            (add-hook 'before-save-hook #'lsp-format-buffer t t)
-            (add-hook 'before-save-hook #'lsp-organize-imports t t)))
-
-
 ;; typescript
 (set-default 'typescript-indent-level 2)
 (setq tide-tsserver-executable "node_modules/typescript/bin/tsserver")
