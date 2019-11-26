@@ -1,4 +1,5 @@
-;; elfeed
+(prelude-require-packages '(elfeed))
+
 ;; data is stored in ~/.elfeed
 (setq elfeed-feeds
       '(("https://www.reddit.com/r/programming.rss" programming)
