@@ -3,20 +3,9 @@
                             blacken
                             csv-mode
                             dockerfile-mode
-                            elfeed
-                            js2-mode
-                            json-mode
-                            go-mode
-                            go-eldoc
-                            go-projectile
-                            gotest
-                            magit
                             markdown-mode
                             protobuf-mode
                             restclient
-                            tide
-                            typescript-mode
-                            prettier-js
                             ))
 
 ;; OS specific stuff

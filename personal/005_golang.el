@@ -55,6 +55,3 @@
 
   (add-hook 'go-mode-hook (lambda ()
                             (run-hooks 'prelude-go-mode-hook))))
-
-(provide 'prelude-go)
-;;; prelude-go.el ends here

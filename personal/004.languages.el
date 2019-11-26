@@ -29,48 +29,6 @@
 (add-hook 'flyspell-mode-hook 'flyspell-buffer)
 (add-hook 'org-mode-hook 'flyspell-mode)
 
-;; typescript
-(set-default 'typescript-indent-level 2)
-(setq tide-tsserver-executable "node_modules/typescript/bin/tsserver")
-;; prettier must be installed globally
-(add-hook 'typescript-mode-hook 'prettier-js-mode)
-(add-hook 'typescript-mode-hook
-          (lambda () (local-set-key (kbd "C-c C-l") #'tide-references)))
-(defun setup-tide-mode ()
-  (interactive)
-  (tide-setup)
-  (flycheck-mode +1)
-  (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (eldoc-mode +1)
-  (tide-hl-identifier-mode +1)
-  (subword-mode +1)
-  (company-mode +1))
-(add-hook 'typescript-mode-hook #'setup-tide-mode)
-(setq prettier-js-args '(
-                         "--trailing-comma" "all"
-                         ))
-(setq prettier-js-command "prettier")
-
-;; web-mode for reactjs with typescript
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-(add-hook 'web-mode-hook
-          (lambda ()
-            (set (make-local-variable 'company-backends) '(company-web-html))
-            (company-mode t)
-            (when (string-equal "tsx" (file-name-extension buffer-file-name))
-              (setup-tide-mode))))
-
-
-;; javascript
-(set-default 'js-indent-level 2)
-(set-default 'js2-bounce-indent-p t)
-(set-default 'js2-strict-trailing-comma-warning nil)
-(add-hook 'js2-mode-hook 'prettier-js-mode)
-
-;; json
-(set-default 'json-reformat:indent-width 2)
-
 
 ;; python
 (setq python-shell-interpreter "ipython"
