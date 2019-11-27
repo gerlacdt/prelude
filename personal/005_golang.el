@@ -1,3 +1,5 @@
+(require 'prelude-lsp)
+
 ;; lsp-mode, disable snippets because i do not use yasnippets
 (setq lsp-enable-snippet nil)
 

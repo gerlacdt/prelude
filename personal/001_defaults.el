@@ -1,17 +1,13 @@
-(prelude-require-packages '(
-                            anzu
+(prelude-require-packages '(anzu
                             blacken
                             csv-mode
                             dockerfile-mode
                             markdown-mode
                             protobuf-mode
-                            restclient
-                            ))
+                            restclient))
 
 ;; OS specific stuff
 (defvar gerlacdt/font "Inconsolata-16")
-
-(set-default 'default-frame-alist (\` ((font \, gerlacdt/font))))
 
 (when (eq system-type 'gnu/linux)
   ;; do nothing
@@ -40,6 +36,10 @@
 (when (ms-windows?)
   ;; flycheck does not work in ms-windows
   (global-flycheck-mode -1))
+
+;; set font after OS-specific logic
+(set-default 'default-frame-alist (\` ((font \, gerlacdt/font))))
+
 
 ;; defines alias
 (defalias 'qrr 'anzu-query-replace-regexp)
