@@ -1,4 +1,4 @@
-;; custom functions
+(require 'prelude-xml)
 
 ;;split emacs in 3 windows with same height and width
 (defun gerlacdt/split3 ()

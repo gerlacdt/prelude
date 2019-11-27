@@ -1,3 +1,6 @@
+(require 'prelude-common-lisp)
+(require 'prelude-scheme)
+
 ;; common lisp
 (setq inferior-lisp-program "/usr/local/bin/sbcl --noinform")
 ;; Also setup the slime-fancy contrib
