@@ -15,7 +15,7 @@
 ;; Ignore go test -c output files
 (add-to-list 'completion-ignored-extensions ".test")
 
-(define-key 'help-command (kbd "G") 'godoc)
+;; (define-key 'help-command (kbd "G") 'godoc)
 
 (with-eval-after-load 'go-mode
   (defun prelude-go-mode-defaults ()
