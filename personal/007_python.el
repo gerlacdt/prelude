@@ -1,8 +1,9 @@
 ;; This is a copy of the prelude python module but uses lsp-mode
-;; instead of anaconda-mode.
+;; instead of anaconda-mode. Requires python3 installed.
 ;;
 ;; requires the following packages:
 ;; pip install 'python-language-server[all]'
+;; pip install black
 ;; pip install ipython
 
 (require 'electric)
