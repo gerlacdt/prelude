@@ -31,19 +31,3 @@
 ;; (setq flyspell-issue-welcome-flag nil) ;; fix for Ubuntu 10.10 problem
 (add-hook 'flyspell-mode-hook 'flyspell-buffer)
 (add-hook 'org-mode-hook 'flyspell-mode)
-
-
-;; python
-(setq python-shell-interpreter "ipython"
-      python-shell-interpreter-args "--simple-prompt -i")
-(add-hook 'inferior-python-mode-hook
-          '(lambda ()
-             (smartparens-mode)))
-
-(add-hook 'python-mode-hook 'blacken-mode)
-
-(setq flycheck-python-pycompile-executable "python3")
-
-;; was needed for macos, with messed up python installation
-;; (setq flycheck-python-flake8-executable "/usr/local/bin/flake8")
-;; (setq flycheck-python-pylint-executable "/usr/local/bin/pylint")
