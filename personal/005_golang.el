@@ -1,7 +1,8 @@
 (require 'prelude-lsp)
 
 ;; lsp-mode, disable snippets because i do not use yasnippets
-(setq lsp-enable-snippet nil)
+(setq lsp-enable-snippet nil
+      lsp-ui-flycheck-enable t)
 
 (require 'prelude-programming)
 
@@ -20,7 +21,7 @@
 (with-eval-after-load 'go-mode
   (defun prelude-go-mode-defaults ()
     ;; lsp config
-    (lsp-deferred)
+    (lsp)
     (add-hook 'before-save-hook #'lsp-format-buffer t t)
     (add-hook 'before-save-hook #'lsp-organize-imports t t)
 
