@@ -2,6 +2,7 @@
                             blacken
                             csv-mode
                             dockerfile-mode
+                            keycast
                             markdown-mode
                             protobuf-mode
                             restclient))
