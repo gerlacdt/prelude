@@ -5,7 +5,8 @@
                             keycast
                             markdown-mode
                             protobuf-mode
-                            restclient))
+                            restclient
+                            terraform-mode))
 
 ;; OS specific stuff
 (defvar gerlacdt/font "Inconsolata-16")
@@ -110,3 +111,6 @@
 
 ;; smartparens for haskell-interactive-mode-hook
 (add-hook 'haskell-interactive-mode-hook #'smartparens-mode)
+
+;; terraform
+(add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
