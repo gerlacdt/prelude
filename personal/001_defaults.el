@@ -114,3 +114,8 @@
 
 ;; terraform
 (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
+
+
+;; GNU Octave
+(setq auto-mode-alist
+      (cons '("\\.m$" . octave-mode) auto-mode-alist))
