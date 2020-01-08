@@ -80,12 +80,18 @@
 (setq gdb-use-separate-io-buffer t)
 (setq compilation-scroll-output t)
 
+;; ivy
+(setq ivy-height 20)
+
+;; override from counsel keymaps
+(global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
+
 ;; helm
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
-(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
-(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
-(global-set-key (kbd "C-x b") 'helm-mini)
-(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+;; (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
+;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+;; (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+;; (global-set-key (kbd "C-x b") 'helm-mini)
+;; (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
 
 
 ;; company-mode
