@@ -55,7 +55,6 @@
 ;; general stuff
 (set-scroll-bar-mode nil)
 (menu-bar-mode -1)
-(setq org-startup-folded nil)
 (setq tags-table-list nil)
 (setq compile-command "make")
 (setq line-number-display-limit-width 1000) ; show line number even if lines are really long
@@ -85,6 +84,12 @@
 
 ;; override from counsel keymaps
 (global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
+
+
+;; org-mode
+(setq org-startup-folded nil)
+(setq org-log-done t)
+
 
 ;; helm
 ;; (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
