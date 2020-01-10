@@ -46,7 +46,6 @@
 ;; defines alias
 (defalias 'qrr 'anzu-query-replace-regexp)
 (defalias 'jpp 'json-pretty-print)
-(defalias 'ffp 'find-file-at-point)
 
 ;; set some prelude defaults
 (setq prelude-guru nil)
@@ -79,24 +78,20 @@
 (setq gdb-use-separate-io-buffer t)
 (setq compilation-scroll-output t)
 
-;; ivy
-(setq ivy-height 20)
-
-;; override from counsel keymaps
-(global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
-
-
 ;; org-mode
 (setq org-startup-folded nil)
 (setq org-log-done t)
 
+;; ivy settings
+;; (setq ivy-height 20)
+;; override from counsel keymaps
+;; (global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
 
-;; helm
-;; (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
-;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
-;; (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
-;; (global-set-key (kbd "C-x b") 'helm-mini)
-;; (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+;; helm settings
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+
 
 
 ;; company-mode
