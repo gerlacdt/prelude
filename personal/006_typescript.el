@@ -18,6 +18,8 @@
     (tide-setup)
     (flycheck-mode +1)
     (setq flycheck-check-syntax-automatically '(save mode-enabled))
+    ;; tslint is outdated, so use eslint for typescript
+    (flycheck-add-next-checker 'typescript-tide 'javascript-eslint)
     (eldoc-mode +1)
     (tide-hl-identifier-mode +1)
     (subword-mode +1)
@@ -27,9 +29,6 @@
 
   (set-default 'typescript-indent-level 2)
   (setq tide-tsserver-executable "node_modules/typescript/bin/tsserver")
-
-  ;; tslint is outdated, so use eslint for typescript
-  (flycheck-add-next-checker 'typescript-tide 'javascript-eslint)
 
   ;; prettier must be installed globally
   (add-hook 'typescript-mode-hook 'prettier-js-mode)
