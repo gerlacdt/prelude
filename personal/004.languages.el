@@ -30,4 +30,7 @@
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 ;; (setq flyspell-issue-welcome-flag nil) ;; fix for Ubuntu 10.10 problem
 (add-hook 'flyspell-mode-hook 'flyspell-buffer)
+
+;; active spell checking for org-mode and markdown-mode
 (add-hook 'org-mode-hook 'flyspell-mode)
+(add-hook 'markdown-mode-hook 'flyspell-mode)
