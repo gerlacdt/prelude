@@ -83,5 +83,6 @@
 (add-hook 'python-mode-hook 'lsp)
 
 (flycheck-add-next-checker 'lsp-ui 'python-mypy)
+(setq flycheck-flake8rc "~/.flake")
 
 (setq flycheck-python-pycompile-executable "python3")
