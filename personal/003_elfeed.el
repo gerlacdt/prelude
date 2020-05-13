@@ -19,6 +19,9 @@
         ("https://www.reddit.com/r/python.rss" python)
         ("https://www.reddit.com/r/kotlin.rss" kotlin)
         ("https://news.ycombinator.com/rss" hacker)
-        ("https://www.heise.de/developer/rss/news-atom.xml" heise)))
+        ("https://www.heise.de/developer/rss/news-atom.xml" heise)
+        ("https://martinfowler.com/feed.atom" mfowler)))
 
 (setq-default elfeed-search-filter "@2-days-ago +unread")
+(setq-default elfeed-search-title-max-width 100)
+(setq-default elfeed-search-title-min-width 100)
