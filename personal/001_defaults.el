@@ -125,3 +125,6 @@
 ;; GNU Octave
 (setq auto-mode-alist
       (cons '("\\.m$" . octave-mode) auto-mode-alist))
+
+;; store recent files regularly
+(run-at-time nil (* 5 60) 'recentf-save-list)
