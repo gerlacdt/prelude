@@ -11,6 +11,9 @@
 
 (setq prelude-c-mode-common-hook 'prelude-c-mode-common-defaults)
 
+;; enable clang-tidy in lsp
+(setq lsp-clients-clangd-args '("--clang-tidy"))
+
 ;; this will affect all modes derived from cc-mode, like
 ;; java-mode, php-mode, etc
 (add-hook 'c-mode-common-hook (lambda ()
