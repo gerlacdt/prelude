@@ -3,6 +3,7 @@
 ;;
 ;; requires the following packages:
 ;; pip install 'python-language-server[all]'
+;; pip install pyls-mypy
 ;; pip install black
 ;; pip install ipython
 
@@ -82,5 +83,5 @@
 (add-hook 'python-mode-hook 'blacken-mode)
 (add-hook 'python-mode-hook 'lsp)
 
-(setq flycheck-flake8rc "~/.flake")
+(setq flycheck-flake8rc "~/.flake") ; set compatible black formatting rules
 (setq flycheck-python-pycompile-executable "python3")
