@@ -46,7 +46,10 @@
             (set (make-local-variable 'company-backends) '(company-web-html))
             (company-mode t)
             (when (string-equal "tsx" (file-name-extension buffer-file-name))
-              (setup-tide-mode))))
+              (prelude-ts-mode-defaults))))
+
+;; enable typescript-tslint checker
+(flycheck-add-mode 'typescript-tslint 'web-mode)
 
 
 ;; javascript
