@@ -34,3 +34,7 @@
 ;; active spell checking for org-mode and markdown-mode
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'markdown-mode-hook 'flyspell-mode)
+
+
+;; web-mode
+(setq web-mode-enable-auto-closing t)
