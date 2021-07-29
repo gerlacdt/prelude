@@ -54,6 +54,7 @@
 
 (defun prelude-python-mode-defaults ()
   "Defaults for Python programming."
+  (setq super-save-mode nil)
   (subword-mode +1)
   (eldoc-mode 1)
   (setq-local electric-layout-rules

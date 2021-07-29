@@ -21,6 +21,8 @@
 (with-eval-after-load 'go-mode
   (defun prelude-go-mode-defaults ()
     ;; lsp config
+    (setq lsp-ui-sideline-mode nil)
+    (setq lsp-ui-sideline-enable nil)
     (lsp)
     (add-hook 'before-save-hook #'lsp-format-buffer t t)
     (add-hook 'before-save-hook #'lsp-organize-imports t t)
@@ -29,7 +31,9 @@
     (setq tab-width 4)
     (setq indent-tabs-mode 1)
     (let ((map go-mode-map))
-      (define-key map (kbd "M-.") 'godef-jump))
+      (define-key map (kbd "M-.") 'lsp-find-definition))
+
+
 
     ;; Add to default go-mode key bindings
     (let ((map go-mode-map))
