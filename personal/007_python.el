@@ -55,6 +55,7 @@
 (defun prelude-python-mode-defaults ()
   "Defaults for Python programming."
   (setq lsp-ui-mode nil)
+  (add-hook 'before-save-hook #'lsp-format-buffer t t)
 
   (local-set-key (kbd "s-f") 'blacken-buffer)
 
