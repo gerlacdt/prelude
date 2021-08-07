@@ -54,7 +54,10 @@
 
 (defun prelude-python-mode-defaults ()
   "Defaults for Python programming."
-  (setq super-save-mode nil)
+  (setq lsp-ui-mode nil)
+
+  (local-set-key (kbd "s-f") 'blacken-buffer)
+
   (subword-mode +1)
   (eldoc-mode 1)
   (setq-local electric-layout-rules
@@ -81,7 +84,7 @@
           '(lambda ()
              (smartparens-mode)))
 
-(add-hook 'python-mode-hook 'blacken-mode)
+;; (add-hook 'python-mode-hook 'blacken-mode)
 (add-hook 'python-mode-hook 'lsp)
 
 (setq flycheck-flake8rc "~/.flake") ; set compatible black formatting rules
