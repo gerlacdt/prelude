@@ -1,5 +1,4 @@
 (prelude-require-packages '(anzu
-                            blacken
                             csv-mode
                             dockerfile-mode
                             keycast
