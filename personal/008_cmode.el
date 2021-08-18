@@ -2,7 +2,7 @@
 ;; instead of anaconda-mode. Requires clang installed.
 ;;
 ;; requires the following packages:
-;; > sudo apt-get install clangd-12 clang-format clang-tidy clang-tools
+;; > sudo apt-get install clang clangd-12 clang-format clang-tidy clang-tools
 ;;
 ;; for clang formatting to work, create a clang-format file in project folder:
 ;; > clang-format -style=llvm -dump-config > .clang-format
