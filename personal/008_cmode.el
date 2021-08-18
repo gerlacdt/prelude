@@ -1,12 +1,19 @@
+;; This is a copy of the prelude cpp-module but uses lsp-mode.
+;; instead of anaconda-mode. Requires clang installed.
+;;
+;; requires the following packages:
+;; > sudo apt-get install clangd-12 clang-format clang-tidy clang-tools
+;;
+;; for clang formatting to work, create a clang-format file in project folder:
+;; > clang-format -style=llvm -dump-config > .clang-format
+
 (require 'prelude-lsp)
 (require 'prelude-programming)
 
-(defun prelude-c-mode-common-defaults ()
-  (setq c-default-style "k&r"
-        c-basic-offset 2)
-  (c-set-offset 'substatement-open 0)
 
-  ;; enable lsp server, clangd
+;; c, cpp hooks
+(defun prelude-c-mode-common-defaults ()
+  (add-hook 'before-save-hook #'lsp-format-buffer t t)
   (lsp))
 
 (setq prelude-c-mode-common-hook 'prelude-c-mode-common-defaults)
@@ -14,11 +21,13 @@
 ;; enable clang-tidy in lsp
 (setq lsp-clients-clangd-args '("--clang-tidy"))
 
-;; this will affect all modes derived from cc-mode, like
-;; java-mode, php-mode, etc
-(add-hook 'c-mode-common-hook (lambda ()
-                                (run-hooks 'prelude-c-mode-common-hook)))
+(add-hook 'c-mode-hook (lambda ()
+                         (run-hooks 'prelude-c-mode-common-hook)))
 
+(add-hook 'c++-mode-hook (lambda ()
+                         (run-hooks 'prelude-c-mode-common-hook)))
+
+;; makefile hooks
 (defun prelude-makefile-mode-defaults ()
   (whitespace-toggle-options '(tabs))
   (setq indent-tabs-mode t ))
@@ -27,8 +36,3 @@
 
 (add-hook 'makefile-mode-hook (lambda ()
                                 (run-hooks 'prelude-makefile-mode-hook)))
-
-;; autoformatting before save
-(add-hook 'c-mode-common-hook #'clang-format+-mode)
-
-(provide 'prelude-c)
