@@ -106,10 +106,10 @@
 ;; projectile native indexing, much faster on windows
 (setq projectile-indexing-method 'alien)
 
-
-;; smartparens
-(setq sp-base-key-bindings 'paredit)
-(sp-use-paredit-bindings)
+;; disable smartparens keybinding, it clashes with (xref/lsp-ui)-find-references
+(add-hook 'smartparens-enabled-hook
+          (lambda ()
+            (define-key smartparens-mode-map (kbd "M-?") nil)) t)
 
 ;; smartparens for protobuf-mode
 (add-hook 'protobuf-mode-hook #'smartparens-mode)

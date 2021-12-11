@@ -66,6 +66,9 @@
   (add-hook 'before-save-hook #'lsp-organize-imports t t)
   (subword-mode +1)
   (eldoc-mode 1)
+  (let ((map python-mode-map))
+    (define-key map (kbd "M-.") 'lsp-ui-peek-find-definitions)
+    (define-key map (kbd "M-?") 'lsp-ui-peek-find-references))
   (setq-local electric-layout-rules
               '((?: . (lambda ()
                         (and (zerop (first (syntax-ppss)))

@@ -23,7 +23,8 @@
     (setq tab-width 4)
     (setq indent-tabs-mode 1)
     (let ((map go-mode-map))
-      (define-key map (kbd "M-.") 'lsp-ui-peek-find-definitions))
+      (define-key map (kbd "M-.") 'lsp-ui-peek-find-definitions)
+      (define-key map (kbd "M-?") 'lsp-ui-peek-find-references))
 
     ;; stop whitespace being highlighted
     (whitespace-toggle-options '(tabs))
