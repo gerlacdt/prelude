@@ -33,7 +33,7 @@
   ;; prettier must be installed globally
   (add-hook 'typescript-mode-hook 'prettier-js-mode)
   (add-hook 'typescript-mode-hook
-            (lambda () (local-set-key (kbd "C-c C-l") #'tide-references)))
+            (lambda () (local-set-key (kbd "M-?") #'tide-references)))
 
 
   (add-hook 'typescript-mode-hook (lambda () (run-hooks 'prelude-ts-mode-hook))))
