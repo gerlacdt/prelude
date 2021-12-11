@@ -54,8 +54,16 @@
 
 (defun prelude-python-mode-defaults ()
   "Defaults for Python programming."
-  (setq lsp-ui-mode nil)
+  (setq lsp-enable-snippet nil
+        lsp-ui-sideline-show-diagnostics t
+        lsp-ui-sideline-show-hover t
+        lsp-ui-sideline-show-code-actions t
+        lsp-ui-flycheck-enable t
+        lsp-ui-doc-enable t
+        lsp-ui-doc-show-with-cursor t)
+  (lsp)
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
+  (add-hook 'before-save-hook #'lsp-organize-imports t t)
   (subword-mode +1)
   (eldoc-mode 1)
   (setq-local electric-layout-rules
@@ -82,7 +90,6 @@
           '(lambda ()
              (smartparens-mode)))
 
-(add-hook 'python-mode-hook 'lsp)
 
 (setq flycheck-flake8rc "~/.flake") ; set compatible black formatting rules
 (setq flycheck-python-pycompile-executable "python3")
