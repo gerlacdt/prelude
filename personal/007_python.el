@@ -6,6 +6,10 @@
 ;; pip install pyls-mypy
 ;; pip install black
 ;; pip install ipython
+;; add $HOME/.flake file, with content (required for black with 88 chars per line):
+;; [flake8]
+;; max-line-length = 88
+;; extend-ignore = E203
 
 (require 'electric)
 (require 'prelude-programming)
