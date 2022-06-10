@@ -15,6 +15,9 @@
           lsp-ui-flycheck-enable t
           lsp-ui-doc-enable t
           lsp-ui-doc-show-with-cursor t)
+    (lsp-register-custom-settings
+     '(("gopls.completeUnimported" t t)
+       ("gopls.staticcheck" t t)))
     (lsp)
     (add-hook 'before-save-hook #'lsp-format-buffer t t)
     (add-hook 'before-save-hook #'lsp-organize-imports t t)
