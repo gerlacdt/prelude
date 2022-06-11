@@ -80,6 +80,7 @@
 ;; org-mode
 (setq org-startup-folded nil)
 (setq org-log-done t)
+(add-to-list 'org-agenda-files "~/.org")
 
 ;; ivy settings
 ;; (setq ivy-height 20)
