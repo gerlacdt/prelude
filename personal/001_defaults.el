@@ -5,10 +5,16 @@
                             markdown-mode
                             protobuf-mode
                             restclient
-                            terraform-mode))
+                            terraform-mode
+                            emojify
+                            unicode-fonts))
 
 ;; OS specific stuff
-(defvar gerlacdt/font "Inconsolata-16")
+(defvar gerlacdt/font "DejaVu Sans Mono-14")
+
+;; UTF-8 as default encoding
+(set-language-environment "UTF-8")
+(set-default-coding-systems 'utf-8)
 
 (when (eq system-type 'gnu/linux)
   ;; do nothing
