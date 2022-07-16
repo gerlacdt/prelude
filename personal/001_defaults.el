@@ -138,3 +138,7 @@
 
 ;;don't highlight the end of long lines
 (setq whitespace-line-column 120)
+
+
+;; enable emojis everywhere
+(add-hook 'after-init-hook #'global-emojify-mode)
