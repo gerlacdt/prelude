@@ -12,34 +12,32 @@
                             flycheck-rust
                             ron-mode))
 
-(unless (featurep 'prelude-lsp)
-  (prelude-require-packages '(racer)))
-
-(setq rust-format-on-save t)
-
 (with-eval-after-load 'rust-mode
   (add-hook 'rust-mode-hook 'cargo-minor-mode)
   (add-hook 'flycheck-mode-hook 'flycheck-rust-setup)
-
-  (if (featurep 'prelude-lsp)
-      (add-hook 'rust-mode-hook 'lsp)
-    (add-hook 'rust-mode-hook 'racer-mode)
-    (add-hook 'racer-mode-hook 'eldoc-mode))
+  (add-hook 'rust-mode-hook 'lsp) ; enable lsp for rust
 
   (defun prelude-rust-mode-defaults ()
-    (unless (featurep 'prelude-lsp)
-      (local-set-key (kbd "C-c C-d") 'racer-describe)
-      (local-set-key (kbd "C-c .") 'racer-find-definition)
-      (local-set-key (kbd "C-c ,") 'pop-tag-mark))
+    ;; format on save
+    ;; (setq rust-format-on-save t)
 
+    (add-hook 'before-save-hook #'lsp-format-buffer t t)
+
+    ;; lsp settings
     (setq lsp-enable-snippet nil
+          lsp-enable-symbol-highlighting t
+          lsp-eldoc-enable-hover t
+          lsp-lens-enable t
+          lsp-headerline-breadcrumb-enable t
           lsp-ui-flycheck-enable t
           lsp-ui-doc-enable t
           lsp-ui-doc-show-with-cursor t
+          lsp-ui-doc-show-with-mouse t
           lsp-ui-doc-enable t)
 
     ;; Prevent #! from chmodding rust files to be executable
     (remove-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
+
     ;; CamelCase aware editing operations
     (subword-mode +1))
 

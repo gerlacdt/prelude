@@ -71,6 +71,7 @@ is deprecated and needs re-compilation."
 
 
 (defun gerlacdt/clear-packages ()
-  "Installs selectd packages and removes all unselected packages."
+  "Installs selected packages and removes all unselected packages."
+  (interactive)
   (package-install-selected-packages)
   (package-autoremove))
