@@ -5,7 +5,9 @@
 ;; * cargo (Rust Package Manager)
 ;; * racer (Rust Completion Tool)
 ;; * rustfmt (Rust Tool for formatting code)
-;; * rls (Rust Language Server, if the prelude-lsp feature is enabled)
+;; * rust-analyser as lsp server needs to be in global path, see:
+;; https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary
+
 
 (prelude-require-packages '(rust-mode
                             cargo
@@ -26,9 +28,9 @@
     ;; lsp settings
     (setq lsp-enable-snippet nil
           lsp-enable-symbol-highlighting t
+          lsp-lens-enable nil
+          lsp-headerline-breadcrumb-enable nil
           lsp-eldoc-enable-hover t
-          lsp-lens-enable t
-          lsp-headerline-breadcrumb-enable t
           lsp-ui-flycheck-enable t
           lsp-ui-doc-enable t
           lsp-ui-doc-show-with-cursor t
