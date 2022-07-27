@@ -6,6 +6,8 @@
                             protobuf-mode
                             restclient
                             terraform-mode
+                            rg
+                            helm-rg
                             emojify
                             unicode-fonts))
 
