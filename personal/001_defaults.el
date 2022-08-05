@@ -142,6 +142,9 @@
 ;;don't highlight the end of long lines
 (setq whitespace-line-column 120)
 
+;; max chars in one line for auto-fill-mode
+(setq-default fill-column 80)
+
 
 ;; enable emojis everywhere
 (add-hook 'after-init-hook #'global-emojify-mode)
