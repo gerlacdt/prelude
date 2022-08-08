@@ -21,9 +21,9 @@
 
   (defun prelude-rust-mode-defaults ()
     ;; format on save
-    ;; (setq rust-format-on-save t)
+    (setq rust-format-on-save t)
 
-    (add-hook 'before-save-hook #'lsp-format-buffer t t)
+    ;; (add-hook 'before-save-hook #'lsp-format-buffer t t)
 
     ;; lsp settings
     (setq lsp-enable-snippet nil

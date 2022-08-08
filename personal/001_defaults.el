@@ -148,3 +148,6 @@
 
 ;; enable emojis everywhere
 (add-hook 'after-init-hook #'global-emojify-mode)
+
+;; disable super-save-mode globally, because it causes some strange behaviour
+(super-save-mode -1)
