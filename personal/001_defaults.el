@@ -79,6 +79,9 @@
 ;; disable auto backups
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+;; (setq auto-save-interval 20)
+;; (setq auto-save-timeout 10)
+(setq auto-save-visited-mode t)
 
 ;;gdb user interface with multiple windows
 (setq gdb-many-windows t)
