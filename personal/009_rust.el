@@ -8,6 +8,9 @@
 ;; * rust-analyser as lsp server needs to be in global path, see:
 ;; https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary
 
+;; fix lsp flycheck startup error in .emacs.d/elpa/flycheck/flycheck.el
+;; see also: https://github.com/flycheck/flycheck/pull/1917
+
 
 (prelude-require-packages '(rust-mode
                             cargo
