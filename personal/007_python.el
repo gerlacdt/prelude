@@ -2,8 +2,7 @@
 ;; instead of anaconda-mode. Requires python3 installed.
 ;;
 ;; requires the following packages:
-;; pip install 'python-language-server[all]'
-;; pip install pyls-mypy
+;; npm i -g pyright
 ;; pip install black
 ;; pip install ipython
 ;; add $HOME/.flake file, with content (required for black with 88 chars per line):
@@ -13,6 +12,9 @@
 
 (require 'electric)
 (require 'prelude-programming)
+
+(prelude-require-packages '(lsp-pyright blacken))
+
 
 ;; Copy pasted from ruby-mode.el
 (defun prelude-python--encoding-comment-required-p ()
@@ -58,15 +60,18 @@
 
 (defun prelude-python-mode-defaults ()
   "Defaults for Python programming."
+  (require 'lsp-pyright)
+  (blacken-mode)
   (setq lsp-enable-snippet nil
         lsp-ui-sideline-show-diagnostics t
         lsp-ui-sideline-show-hover t
         lsp-ui-sideline-show-code-actions t
+        lsp-headerline-breadcrumb-enable t
         lsp-ui-flycheck-enable t
         lsp-ui-doc-enable t
-        lsp-ui-doc-show-with-cursor t)
+        lsp-ui-doc-show-with-cursor nil
+        lsp-ui-doc-show-with-mouse t)
   (lsp)
-  (add-hook 'before-save-hook #'lsp-format-buffer t t)
   (add-hook 'before-save-hook #'lsp-organize-imports t t)
   (subword-mode +1)
   (eldoc-mode 1)
