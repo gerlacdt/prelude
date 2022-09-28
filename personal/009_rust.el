@@ -31,13 +31,19 @@
     ;; lsp settings
     (setq lsp-enable-snippet nil
           lsp-enable-symbol-highlighting t
-          lsp-lens-enable nil
+          lsp-lens-enable t
           lsp-headerline-breadcrumb-enable t
           lsp-eldoc-enable-hover t
+          lsp-signature-render-documentation nil
           lsp-ui-flycheck-enable t
+          lsp-ui-sideline-enable t
+          lsp-ui-sideline-show-code-actions t
+          lsp-ui-sideline-show-hover t
+          lsp-ui-sideline-show-diagnostics t
           lsp-ui-doc-enable t
           lsp-ui-doc-show-with-cursor nil
-          lsp-ui-doc-show-with-mouse t)
+          lsp-ui-doc-show-with-mouse t
+          lsp-rust-analyzer-proc-macro-enable t)
 
     ;; Prevent #! from chmodding rust files to be executable
     (remove-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
