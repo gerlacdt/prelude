@@ -15,14 +15,22 @@
 (prelude-require-packages '(rust-mode
                             cargo
                             flycheck-rust
+                            tree-sitter
+                            tree-sitter-langs
                             ron-mode))
 
 (with-eval-after-load 'rust-mode
   (add-hook 'rust-mode-hook 'cargo-minor-mode)
   (add-hook 'flycheck-mode-hook 'flycheck-rust-setup)
+  (add-hook 'rust-mode-hook #'tree-sitter-mode) ; enable tree-sitter mode
   (add-hook 'rust-mode-hook 'lsp) ; enable lsp for rust
 
   (defun prelude-rust-mode-defaults ()
+    (tree-sitter-require 'rust)
+
+    ;; enable tree-sitter syntax-highlighting
+    (tree-sitter-hl-mode t)
+
     ;; format on save
     (setq rust-format-on-save t)
 
