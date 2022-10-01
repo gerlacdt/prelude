@@ -49,7 +49,7 @@
           lsp-ui-sideline-show-hover t
           lsp-ui-sideline-show-diagnostics t
           lsp-ui-doc-enable t
-          lsp-ui-doc-show-with-cursor nil
+          lsp-ui-doc-show-with-cursor t
           lsp-ui-doc-show-with-mouse t
           lsp-rust-analyzer-proc-macro-enable t
           lsp-rust-analyzer-experimental-proc-attr-macros t
