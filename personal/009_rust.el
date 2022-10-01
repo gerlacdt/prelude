@@ -51,7 +51,9 @@
           lsp-ui-doc-enable t
           lsp-ui-doc-show-with-cursor nil
           lsp-ui-doc-show-with-mouse t
-          lsp-rust-analyzer-proc-macro-enable t)
+          lsp-rust-analyzer-proc-macro-enable t
+          lsp-rust-analyzer-experimental-proc-attr-macros t
+          lsp-rust-analyzer-cargo-run-build-scripts t)
 
     ;; Prevent #! from chmodding rust files to be executable
     (remove-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
