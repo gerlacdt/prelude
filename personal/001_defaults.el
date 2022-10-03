@@ -12,7 +12,7 @@
                             unicode-fonts))
 
 ;; OS specific stuff
-(defvar gerlacdt/font "DejaVu Sans Mono-14")
+(defvar gerlacdt/font "DejaVu Sans Mono-12")
 
 ;; UTF-8 as default encoding
 (set-language-environment "UTF-8")
@@ -142,8 +142,9 @@
 ;; store recent files regularly
 (run-at-time nil (* 5 60) 'recentf-save-list)
 
-;;don't highlight the end of long lines
+;; configure whitespace-mode, no highlights of too long lines at the end
 (setq whitespace-line-column 120)
+(setq whitespace-style '(face tabs empty trailing))
 
 ;; max chars in one line for auto-fill-mode
 (setq-default fill-column 80)
@@ -152,5 +153,5 @@
 ;; enable emojis everywhere
 (add-hook 'after-init-hook #'global-emojify-mode)
 
-;; disable super-save-mode globally, because it causes some strange behaviour
+;; disable super-save-mode globally, because it causes some strange behaviour when auto-format after save
 (super-save-mode -1)
