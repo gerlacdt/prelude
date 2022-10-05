@@ -75,3 +75,9 @@ is deprecated and needs re-compilation."
   (interactive)
   (package-install-selected-packages)
   (package-autoremove))
+
+
+(defun gerlacdt/align-non-space (BEG END)
+  "Align non-space columns in region BEG END."
+  (interactive "r")
+  (align-regexp BEG END "\\(\\s-*\\)\\s-" 1 1 t))
