@@ -10,7 +10,6 @@
 (with-eval-after-load 'go-mode
   (defun prelude-go-mode-defaults ()
     ;; lsp config
-    ;; lsp-mode, disable snippets because i do not use yasnippets
     (setq lsp-enable-snippet nil
           lsp-ui-flycheck-enable t
           lsp-ui-doc-enable t
@@ -19,8 +18,6 @@
      '(("gopls.completeUnimported" t t)
        ("gopls.staticcheck" t t)))
     (lsp)
-    (add-hook 'before-save-hook #'lsp-format-buffer t t)
-    (add-hook 'before-save-hook #'lsp-organize-imports t t)
 
     ;; my defaults
     (setq tab-width 4)
@@ -34,6 +31,11 @@
 
     ;; CamelCase aware editing operations
     (subword-mode +1))
+
+  (defun lsp-go-install-save-hooks ()
+    (add-hook 'before-save-hook #'lsp-format-buffer t t)
+    (add-hook 'before-save-hook #'lsp-organize-imports t t))
+  (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
 
   (setq prelude-go-mode-hook 'prelude-go-mode-defaults)
 
