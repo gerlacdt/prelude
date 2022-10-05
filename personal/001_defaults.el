@@ -97,16 +97,11 @@
 ;; ivy settings
 (global-set-key (kbd "C-c a") 'counsel-rg)
 (setq ivy-height 20)
-;; override from counsel keymaps
-;; (global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
 
 ;; helm settings
 ;; (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
 ;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
 ;; (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
-
-
-
 
 ;; company-mode
 (global-set-key (kbd "C-<tab>") 'company-complete-common-or-cycle)
