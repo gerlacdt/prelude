@@ -95,14 +95,16 @@
                            (add-to-list 'org-agenda-files "~/.org")))
 
 ;; ivy settings
-;; (setq ivy-height 20)
+(global-set-key (kbd "C-c a") 'counsel-rg)
+(setq ivy-height 20)
 ;; override from counsel keymaps
 ;; (global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
 
 ;; helm settings
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
-(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
-(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+;; (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
+;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+;; (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+
 
 
 
@@ -110,9 +112,8 @@
 (global-set-key (kbd "C-<tab>") 'company-complete-common-or-cycle)
 ;; aligns annotation to the right hand side
 (setq company-dabbrev-downcase nil)
-(setq company-idle-delay 0.3)
+(setq company-idle-delay 0.1)
 (setq company-minimum-prefix-length 1)
-
 
 ;; projectile
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
