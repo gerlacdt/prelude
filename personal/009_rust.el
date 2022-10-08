@@ -39,18 +39,20 @@
     ;; lsp settings
     (setq lsp-enable-snippet nil
           lsp-enable-symbol-highlighting t
-          lsp-lens-enable t
+          lsp-lens-enable nil
           lsp-headerline-breadcrumb-enable t
           lsp-eldoc-enable-hover t
+          lsp-signature-auto-activate t
           lsp-signature-render-documentation nil
           lsp-ui-flycheck-enable t
-          lsp-ui-sideline-enable t
-          lsp-ui-sideline-show-code-actions t
-          lsp-ui-sideline-show-hover t
-          lsp-ui-sideline-show-diagnostics t
+          lsp-ui-sideline-enable nil
+          lsp-ui-sideline-show-code-actions nil
+          lsp-modeline-code-actions-enable t
+          lsp-ui-sideline-show-hover nil
+          lsp-ui-sideline-show-diagnostics nil
           lsp-ui-doc-enable t
           lsp-ui-doc-show-with-cursor t
-          lsp-ui-doc-show-with-mouse t
+          lsp-ui-doc-show-with-mouse nil
           lsp-rust-analyzer-proc-macro-enable t
           lsp-rust-analyzer-experimental-proc-attr-macros t
           lsp-rust-analyzer-cargo-run-build-scripts t)

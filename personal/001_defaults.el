@@ -8,6 +8,7 @@
                             terraform-mode
                             rg
                             helm-rg
+                            org-drill
                             emojify
                             unicode-fonts))
 
