@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: drill item
+# key: item
+# --
+* item                :drill:
+$1
+
+** answer
+$0

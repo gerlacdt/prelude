@@ -90,9 +90,19 @@
 (setq compilation-scroll-output t)
 
 ;; org-mode
+(require 'yasnippet)
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+(yas-reload-all)
+(define-key yas-minor-mode-map (kbd "<tab>") nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+
+;; need to disable GNOME keybinding in settings -> keyboard
+(define-key yas-minor-mode-map (kbd "s-<tab>") #'yas-expand)
+
 (setq org-startup-folded nil)
 (setq org-log-done t)
 (add-hook 'org-mode-hook (lambda ()
+                           (yas-minor-mode)
                            (add-to-list 'org-agenda-files "~/.org")))
 
 ;; ivy settings
