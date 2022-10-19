@@ -40,7 +40,7 @@
     (setq lsp-enable-snippet nil
           lsp-enable-symbol-highlighting t
           lsp-lens-enable nil
-          lsp-headerline-breadcrumb-enable t
+          lsp-headerline-breadcrumb-enable nil
           lsp-eldoc-enable-hover t
           lsp-signature-auto-activate t
           lsp-signature-render-documentation nil
