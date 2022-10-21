@@ -115,11 +115,10 @@
 ;; (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
 ;; company-mode
-(global-set-key (kbd "C-<tab>") 'company-complete-common-or-cycle)
 ;; aligns annotation to the right hand side
 (setq company-dabbrev-downcase nil)
 (setq company-idle-delay 0.1)
-(setq company-minimum-prefix-length 1)
+(setq company-minimum-prefix-length 0)
 
 ;; projectile
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)

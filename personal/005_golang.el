@@ -10,9 +10,11 @@
 (with-eval-after-load 'go-mode
   (defun prelude-go-mode-defaults ()
     ;; lsp config
-    (setq lsp-enable-snippet nil
+    (setq lsp-enable-snippet t
+          lsp-enable-symbol-highlighting t
           lsp-ui-flycheck-enable t
           lsp-ui-doc-enable t
+          lsp-ui-doc-show-with-mouse nil
           lsp-ui-doc-show-with-cursor t)
     (lsp-register-custom-settings
      '(("gopls.completeUnimported" t t)
@@ -28,6 +30,9 @@
 
     ;; stop whitespace being highlighted
     (whitespace-toggle-options '(tabs))
+
+    ;; enable snippets
+    (yas-minor-mode)
 
     ;; CamelCase aware editing operations
     (subword-mode +1))

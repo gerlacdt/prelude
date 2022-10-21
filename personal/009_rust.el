@@ -37,7 +37,7 @@
     ;; (add-hook 'before-save-hook #'lsp-format-buffer t t)
 
     ;; lsp settings
-    (setq lsp-enable-snippet nil
+    (setq lsp-enable-snippet t
           lsp-enable-symbol-highlighting t
           lsp-lens-enable nil
           lsp-headerline-breadcrumb-enable nil
@@ -47,7 +47,7 @@
           lsp-ui-flycheck-enable t
           lsp-ui-sideline-enable nil
           lsp-ui-sideline-show-code-actions nil
-          lsp-modeline-code-actions-enable t
+          lsp-modeline-code-actions-enable nil
           lsp-ui-sideline-show-hover nil
           lsp-ui-sideline-show-diagnostics nil
           lsp-ui-doc-enable t
@@ -59,6 +59,9 @@
 
     ;; Prevent #! from chmodding rust files to be executable
     (remove-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
+
+    ;; enable snippets
+    (yas-minor-mode)
 
     ;; CamelCase aware editing operations
     (subword-mode +1))
