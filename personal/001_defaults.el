@@ -10,6 +10,7 @@
                             helm-rg
                             org-drill
                             emojify
+                            solarized-theme
                             unicode-fonts))
 
 ;; OS specific stuff
