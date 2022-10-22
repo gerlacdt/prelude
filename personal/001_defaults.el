@@ -31,11 +31,6 @@
         mac-right-option-modifier nil
         gerlacdt/font "Menlo-16"))
 
-(when (eq window-system nil)
-  ;; needed ubuntu for line highlighting in emacs -nw mode (terminal)
-  (set-face-foreground 'highlight nil)
-  (set-face-background 'hl-line "#3e4446"))
-
 (when (window-system)
   ;; do nothing
   )
