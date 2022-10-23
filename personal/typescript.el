@@ -9,9 +9,6 @@
 (require 'typescript-mode)
 
 
-(setq prettier-js-args '("--trailing-comma" "all"))
-(setq prettier-js-command "prettier")
-
 (with-eval-after-load 'typescript-mode
   (defun prelude-ts-mode-defaults ()
     (interactive)

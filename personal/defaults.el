@@ -9,6 +9,7 @@
                             rg
                             helm-rg
                             org-drill
+                            prettier-js
                             emojify
                             unicode-fonts))
 
@@ -156,3 +157,10 @@
 
 ;; disable super-save-mode globally, because it causes some strange behaviour when auto-format after save
 (super-save-mode -1)
+
+
+;; active prettier format on save for some modes
+(setq prettier-js-args '("--trailing-comma" "all"))
+(setq prettier-js-command "prettier")
+(add-hook 'web-mode-hook 'prettier-js-mode)
+(add-hook 'json-mode-hook 'prettier-js-mode)
