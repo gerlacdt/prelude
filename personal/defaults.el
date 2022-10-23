@@ -50,6 +50,13 @@
 ;; set some prelude defaults
 (setq prelude-guru nil)
 (setq prelude-flyspell nil)
+(setq which-function-mode nil)
+
+;; hide minor-modes in modeline
+(diminish 'which-key-mode)
+(diminish 'whitespace-mode)
+(diminish 'prelude-mode)
+(diminish 'smartparens-mode)
 
 ;; general stuff
 (set-scroll-bar-mode nil)
