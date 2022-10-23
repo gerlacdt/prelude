@@ -1,13 +1,9 @@
-(prelude-require-packages '(anzu
-                            csv-mode
+(prelude-require-packages '(csv-mode
                             dockerfile-mode
-                            keycast
                             markdown-mode
                             protobuf-mode
-                            restclient
                             terraform-mode
                             rg
-                            helm-rg
                             org-drill
                             prettier-js
                             emojify
