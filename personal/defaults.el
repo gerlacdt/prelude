@@ -119,9 +119,6 @@
 (setq company-idle-delay 0.3)
 (setq company-minimum-prefix-length 1)
 
-;; projectile
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-
 ;; projectile native indexing, much faster on windows
 (setq projectile-indexing-method 'alien)
 
