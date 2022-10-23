@@ -37,7 +37,10 @@
           lsp-ui-flycheck-enable t
           lsp-ui-sideline-enable nil
           lsp-modeline-code-actions-enable nil
-          lsp-ui-doc-enable nil
+          lsp-modeline-diagnostics-enable nil
+          lsp-ui-doc-enable t
+          lsp-ui-doc-show-with-cursor nil
+          lsp-ui-doc-show-with-mouse t
           lsp-rust-analyzer-proc-macro-enable t
           lsp-rust-analyzer-experimental-proc-attr-macros t
           lsp-rust-analyzer-cargo-run-build-scripts t)
