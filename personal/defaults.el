@@ -76,12 +76,13 @@
      (add-to-list 'grep-find-ignored-directories "node_modules")
      (add-to-list 'grep-find-ignored-directories "vendor")))
 
-;; disable auto backups
+;; auto backups
 (setq make-backup-files nil)
 (setq auto-save-default nil)
-;; (setq auto-save-interval 20)
-;; (setq auto-save-timeout 10)
 (setq auto-save-visited-mode t)
+(auto-save-visited-mode +1)
+(setq auto-save-visited-interval 60)
+(setq create-lockfiles nil)
 
 ;;gdb user interface with multiple windows
 (setq gdb-many-windows t)
