@@ -102,6 +102,7 @@
 
 (setq org-startup-folded nil)
 (setq org-log-done t)
+(setq org-image-actual-width nil)
 (add-hook 'org-mode-hook (lambda ()
                            (yas-minor-mode)
                            (add-to-list 'org-agenda-files "~/.org")))
