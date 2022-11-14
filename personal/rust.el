@@ -30,16 +30,17 @@
 
     ;; lsp settings
     (setq lsp-lens-enable nil
-          lsp-headerline-breadcrumb-enable nil
+          lsp-headerline-breadcrumb-enable t
           lsp-eldoc-enable-hover t
           lsp-signature-auto-activate t
           lsp-signature-render-documentation nil
           lsp-ui-flycheck-enable t
-          lsp-ui-sideline-enable nil
+          lsp-ui-sideline-enable t
           lsp-modeline-code-actions-enable nil
           lsp-modeline-diagnostics-enable nil
           lsp-ui-doc-enable t
-          lsp-ui-doc-show-with-cursor nil
+          lsp-ui-doc-include-signature t
+          lsp-ui-doc-show-with-cursor t
           lsp-ui-doc-show-with-mouse t
           lsp-rust-analyzer-proc-macro-enable t
           lsp-rust-analyzer-experimental-proc-attr-macros t
