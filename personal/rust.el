@@ -41,7 +41,7 @@
           lsp-ui-doc-enable t
           lsp-ui-doc-include-signature t
           lsp-ui-doc-show-with-cursor t
-          lsp-ui-doc-show-with-mouse t
+          lsp-ui-doc-show-with-mouse nil
           lsp-rust-analyzer-proc-macro-enable t
           lsp-rust-analyzer-experimental-proc-attr-macros t
           lsp-rust-analyzer-cargo-run-build-scripts t)
