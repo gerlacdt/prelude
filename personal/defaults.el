@@ -1,3 +1,7 @@
+;; installation instrucation for ubuntu, to disable Gnome shortcuts Ctrl-. and Ctrl-;
+;; execute:
+;; gsettings set org.freedesktop.ibus.panel.emoji hotkey "[]"
+
 (prelude-require-packages '(csv-mode
                             dockerfile-mode
                             markdown-mode

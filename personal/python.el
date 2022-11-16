@@ -69,8 +69,8 @@
         lsp-headerline-breadcrumb-enable t
         lsp-ui-flycheck-enable t
         lsp-ui-doc-enable t
-        lsp-ui-doc-show-with-cursor nil
-        lsp-ui-doc-show-with-mouse t)
+        lsp-ui-doc-show-with-cursor t
+        lsp-ui-doc-show-with-mouse nil)
   (lsp)
   (add-hook 'before-save-hook #'lsp-organize-imports t t)
   (subword-mode +1)
