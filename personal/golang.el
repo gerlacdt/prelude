@@ -2,12 +2,20 @@
 (require 'prelude-programming)
 (require 'go-projectile)
 
-(prelude-require-packages '(go-mode))
+(prelude-require-packages '(go-mode
+                            tree-sitter
+                            tree-sitter-langs))
+
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
 
 ;; Ignore go test -c output files
 (add-to-list 'completion-ignored-extensions ".test")
 
 (with-eval-after-load 'go-mode
+
+  (add-hook 'go-mode-hook #'tree-sitter-mode)
+  (add-hook 'go-mode-hook #'tree-sitter-hl-mode)
   (defun prelude-go-mode-defaults ()
     ;; lsp config
     (setq lsp-enable-snippet t

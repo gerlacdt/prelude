@@ -13,8 +13,14 @@
 (require 'electric)
 (require 'prelude-programming)
 
-(prelude-require-packages '(lsp-pyright blacken))
+(prelude-require-packages '(lsp-pyright
+                            blacken
+                            tree-sitter
+                            tree-sitter-langs))
 
+
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
 
 ;; Copy pasted from ruby-mode.el
 (defun prelude-python--encoding-comment-required-p ()
@@ -92,6 +98,8 @@
 
 (setq prelude-python-mode-hook 'prelude-python-mode-defaults)
 
+(add-hook 'python-mode-hook #'tree-sitter-mode)
+(add-hook 'python-mode-hook #'tree-sitter-hl-mode)
 (add-hook 'python-mode-hook (lambda ()
                               (run-hooks 'prelude-python-mode-hook)))
 

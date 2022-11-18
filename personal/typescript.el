@@ -1,12 +1,16 @@
 (prelude-require-packages '(js2-mode
                             json-mode
                             prettier-js
+                            tree-sitter
+                            tree-sitter-langs
                             tide
                             typescript-mode))
 
 
 (require 'prelude-programming)
 (require 'typescript-mode)
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
 
 
 (with-eval-after-load 'typescript-mode
@@ -33,6 +37,8 @@
             (lambda () (local-set-key (kbd "M-?") #'tide-references)))
 
 
+  (add-hook 'typescript-mode-hook #'tree-sitter-mode)
+  (add-hook 'typescript-mode-hook #'tree-sitter-hl-mode)
   (add-hook 'typescript-mode-hook (lambda () (run-hooks 'prelude-ts-mode-hook))))
 
 ;; web-mode for reactjs with typescript
