@@ -12,7 +12,13 @@
                             org-tree-slide
                             prettier-js
                             emojify
+                            tree-sitter
+                            tree-sitter-langs
                             unicode-fonts))
+
+
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
 
 ;; OS specific stuff
 (defvar gerlacdt/font "DejaVu Sans Mono-12")
@@ -151,6 +157,8 @@
 
 ;; terraform
 (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
+(add-hook 'terraform-mode-hook #'tree-sitter-mode)
+(add-hook 'terraform-mode-hook #'tree-sitter-hl-mode)
 
 
 ;; GNU Octave
