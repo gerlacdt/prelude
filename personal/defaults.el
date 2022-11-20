@@ -90,10 +90,10 @@
 ;; auto backups
 (setq make-backup-files nil)
 (setq auto-save-default nil)
-(setq auto-save-visited-mode t)
-(auto-save-visited-mode +1)
+(setq auto-save-visited-mode nil)
+(auto-save-visited-mode -1)
 (setq auto-save-visited-interval 60)
-(setq create-lockfiles nil)
+(setq create-lockfiles t)
 
 ;;gdb user interface with multiple windows
 (setq gdb-many-windows t)
