@@ -188,4 +188,4 @@
 (setq prettier-js-command "prettier")
 (add-hook 'web-mode-hook 'prettier-js-mode)
 (add-hook 'json-mode-hook 'prettier-js-mode)
-;; (add-hook 'markdown-mode-hook 'prettier-js-mode)
+(add-hook 'markdown-mode-hook 'prettier-js-mode)
