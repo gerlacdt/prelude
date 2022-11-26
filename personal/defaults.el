@@ -132,6 +132,8 @@
 ;; ivy settings
 (global-set-key (kbd "C-c a") 'counsel-rg)
 (setq ivy-height 20)
+(define-key ivy-minibuffer-map
+  (kbd "C-w") 'ivy-yank-word)
 
 ;; helm settings
 ;; (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
