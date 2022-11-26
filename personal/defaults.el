@@ -11,7 +11,6 @@
                             org-drill
                             org-tree-slide
                             prettier-js
-                            iedit
                             emojify
                             tree-sitter
                             tree-sitter-langs
@@ -20,10 +19,12 @@
 
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
-(require 'iedit)
 
 ;; OS specific stuff
-(defvar gerlacdt/font "DejaVu Sans Mono-12")
+;; (defvar gerlacdt/font "DejaVu Sans Mono-12")
+;; download nerdfonts and copy into ~/.local/share/fonts/
+;; > fc-cache -fv
+(defvar gerlacdt/font "DejaVuSansMono Nerd Font-12")
 
 ;; UTF-8 as default encoding
 (set-language-environment "UTF-8")
