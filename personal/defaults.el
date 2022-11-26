@@ -11,6 +11,7 @@
                             org-drill
                             org-tree-slide
                             prettier-js
+                            iedit
                             emojify
                             tree-sitter
                             tree-sitter-langs
@@ -19,6 +20,7 @@
 
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
+(require 'iedit)
 
 ;; OS specific stuff
 (defvar gerlacdt/font "DejaVu Sans Mono-12")
