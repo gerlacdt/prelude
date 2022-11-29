@@ -21,8 +21,8 @@
 (require 'tree-sitter-langs)
 
 ;; OS specific stuff
-;; (defvar gerlacdt/font "DejaVu Sans Mono-12")
-;; download nerdfonts and copy into ~/.local/share/fonts/
+;; download nerdfonts, https://www.nerdfonts.com/font-downloads
+;; copy into ~/.local/share/fonts/
 ;; > fc-cache -fv
 (defvar gerlacdt/font "DejaVuSansMono Nerd Font-12")
 
@@ -39,7 +39,8 @@
   (setq mac-command-modifier 'meta
         mac-option-modifier 'super
         mac-right-option-modifier nil
-        gerlacdt/font "Menlo-16"))
+	;; copy into ~/Library/Fonts/
+        gerlacdt/font "DejaVuSansMono Nerd Font-16"))
 
 (when (window-system)
   ;; do nothing
