@@ -7,6 +7,7 @@
                             markdown-mode
                             protobuf-mode
                             terraform-mode
+                            multiple-cursors
                             rg
                             org-drill
                             org-tree-slide
@@ -187,6 +188,11 @@
 
 ;; disable super-save-mode globally, because it causes some strange behaviour when auto-format after save
 (super-save-mode -1)
+
+;; multipe-cursors shortcuts
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/edit-lines)
 
 
 ;; active prettier format on save for some modes
