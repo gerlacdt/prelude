@@ -201,3 +201,6 @@
 (add-hook 'web-mode-hook 'prettier-js-mode)
 (add-hook 'json-mode-hook 'prettier-js-mode)
 (add-hook 'markdown-mode-hook 'prettier-js-mode)
+
+;; configure expand region
+(global-set-key (kbd "C--") 'er/contract-region)
