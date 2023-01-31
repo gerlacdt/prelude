@@ -204,3 +204,8 @@
 
 ;; configure expand region
 (global-set-key (kbd "C--") 'er/contract-region)
+
+;; configure text-scale
+(global-unset-key (kbd "C-+"))
+(global-set-key (kbd "<f6>") 'text-scale-increase)
+(global-set-key (kbd "<f5>") 'text-scale-decrease)
