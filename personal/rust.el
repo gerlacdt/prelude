@@ -49,9 +49,9 @@
           lsp-ui-doc-include-signature t
           lsp-ui-doc-show-with-cursor t
           lsp-ui-doc-show-with-mouse nil
-          lsp-rust-analyzer-server-display-inlay-hints t
-          lsp-rust-analyzer-display-parameter-hints t
-          lsp-rust-analyzer-display-chaining-hints t
+          ;; lsp-rust-analyzer-server-display-inlay-hints t
+          ;; lsp-rust-analyzer-display-parameter-hints t
+          ;; lsp-rust-analyzer-display-chaining-hints t
           lsp-rust-analyzer-proc-macro-enable t
           lsp-rust-analyzer-experimental-proc-attr-macros t
           lsp-rust-analyzer-display-lifetime-elision-hints-enable "always"
