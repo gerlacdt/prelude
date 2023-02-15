@@ -162,12 +162,6 @@
 ;; smartparens for haskell-interactive-mode-hook
 (add-hook 'haskell-interactive-mode-hook #'smartparens-mode)
 
-;; terraform
-(add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
-(add-hook 'terraform-mode-hook #'tree-sitter-mode)
-(add-hook 'terraform-mode-hook #'tree-sitter-hl-mode)
-
-
 ;; GNU Octave
 (setq auto-mode-alist
       (cons '("\\.m$" . octave-mode) auto-mode-alist))
