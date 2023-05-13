@@ -2,7 +2,14 @@
 
 ;;; prerequisites: gem install solargraph rubocop
 
-(prelude-require-packages '(inf-ruby yari rubocop))
+(prelude-require-packages '(inf-ruby
+                            yari
+                            rubocop
+                            tree-sitter
+                            tree-sitter-langs))
+
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
 
 ;; We never want to edit Rubinius bytecode
 (add-to-list 'completion-ignored-extensions ".rbc")
@@ -12,6 +19,9 @@
 
 (with-eval-after-load 'ruby-mode
   (add-hook 'ruby-mode-hook 'lsp)
+  (add-hook 'ruby-mode-hook #'tree-sitter-mode)
+  (add-hook 'ruby-mode-hook #'tree-sitter-hl-mode)
+
   (defun prelude-ruby-mode-defaults ()
     ;; Don't auto-insert encoding comments
     ;; Those are almost never needed in Ruby 2+
@@ -24,9 +34,7 @@
     (add-hook 'before-save-hook #'lsp-format-buffer t t))
   (add-hook 'ruby-mode-hook #'lsp-save-hooks)
 
-
   (setq prelude-ruby-mode-hook 'prelude-ruby-mode-defaults)
-
   (add-hook 'ruby-mode-hook (lambda ()
                               (run-hooks 'prelude-ruby-mode-hook))))
 
