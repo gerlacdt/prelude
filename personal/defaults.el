@@ -25,7 +25,7 @@
 ;; download nerdfonts, https://www.nerdfonts.com/font-downloads
 ;; copy into ~/.local/share/fonts/
 ;; > fc-cache -fv
-(defvar gerlacdt/font "DejaVuSansMono Nerd Font-12")
+(defvar gerlacdt/font "Hack Nerd Font-12")
 
 ;; UTF-8 as default encoding
 (set-language-environment "UTF-8")
@@ -41,7 +41,7 @@
         mac-option-modifier 'super
         mac-right-option-modifier nil
 	;; copy into ~/Library/Fonts/
-        gerlacdt/font "DejaVuSansMono Nerd Font-16"))
+        gerlacdt/font "Hack Nerd Font-16"))
 
 (when (window-system)
   ;; do nothing
