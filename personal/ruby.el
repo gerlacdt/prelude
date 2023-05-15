@@ -4,7 +4,6 @@
 
 (prelude-require-packages '(inf-ruby
                             yari
-                            rubocop
                             tree-sitter
                             tree-sitter-langs))
 
