@@ -122,15 +122,6 @@
                            (yas-minor-mode)
                            (add-to-list 'org-agenda-files "~/.org")))
 
-;; org-tree-slide , presentations with org-mode
-(when (require 'org-tree-slide nil t)
-  (global-set-key (kbd "<f8>") 'org-tree-slide-mode)
-  (define-key org-tree-slide-mode-map (kbd "<f9>")
-    'org-tree-slide-move-previous-tree)
-  (define-key org-tree-slide-mode-map (kbd "<f10>")
-    'org-tree-slide-move-next-tree)
-  (setq org-tree-slide-skip-done nil))
-
 ;; ivy settings
 (global-set-key (kbd "C-c a") 'counsel-rg)
 (setq ivy-height 20)
