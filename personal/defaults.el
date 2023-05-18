@@ -10,7 +10,6 @@
                             multiple-cursors
                             rg
                             org-drill
-                            org-tree-slide
                             prettier-js
                             emojify
                             tree-sitter
