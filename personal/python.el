@@ -61,9 +61,6 @@
           (when (buffer-modified-p)
             (basic-save-buffer-1)))))))
 
-(when (fboundp 'exec-path-from-shell-copy-env)
-  (exec-path-from-shell-copy-env "PYTHONPATH"))
-
 (defun prelude-python-mode-defaults ()
   "Defaults for Python programming."
   (require 'lsp-pyright)
@@ -107,7 +104,7 @@
 (setq python-shell-interpreter "ipython"
       python-shell-interpreter-args "--simple-prompt -i")
 (add-hook 'inferior-python-mode-hook
-          '(lambda ()
+          #'(lambda ()
              (smartparens-mode)))
 
 
