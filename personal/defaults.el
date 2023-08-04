@@ -20,6 +20,9 @@
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
 
+;; hide warnings
+(setq native-comp-async-report-warnings-errors nil)
+
 ;; OS specific stuff
 ;; download nerdfonts, https://www.nerdfonts.com/font-downloads
 ;; copy into ~/.local/share/fonts/
