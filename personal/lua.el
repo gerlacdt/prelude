@@ -12,14 +12,10 @@
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
 
-(setq lsp-clients-lua-language-server-bin "~/.local/bin/lua-language-server")
 
 (defun prelude-lua-mode-defaults ()
-  ;; enable lsp
-  (lsp)
-
   ;; format buffer
-  (add-hook 'before-save-hook #'lsp-format-buffer t t)
+  (add-hook 'before-save-hook #'eglot-format-buffer t t)
 
   ;; CamelCase aware editing operations
   (subword-mode +1))
@@ -27,6 +23,8 @@
 (setq prelude-lua-mode-hook 'prelude-lua-mode-defaults)
 (add-hook 'lua-mode-hook (lambda ()
                            (run-hooks 'prelude-lua-mode-hook)))
+
+(add-hook 'lua-mode-hook 'eglot-ensure)
 
 (provide 'prelude-lua)
 ;;; prelude-lua.el ends here

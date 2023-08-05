@@ -17,7 +17,6 @@
 (define-key 'help-command (kbd "R") 'yari)
 
 (with-eval-after-load 'ruby-mode
-  (add-hook 'ruby-mode-hook 'lsp)
   (add-hook 'ruby-mode-hook #'tree-sitter-mode)
   (add-hook 'ruby-mode-hook #'tree-sitter-hl-mode)
 
@@ -27,15 +26,15 @@
     (setq ruby-insert-encoding-magic-comment nil)
     (inf-ruby-minor-mode +1)
     ;; CamelCase aware editing operations
-    (subword-mode +1))
+    (subword-mode +1)
 
-  (defun lsp-save-hooks ()
-    (add-hook 'before-save-hook #'lsp-format-buffer t t))
-  (add-hook 'ruby-mode-hook #'lsp-save-hooks)
+    (add-hook 'before-save-hook #'eglot-format-buffer t t))
 
   (setq prelude-ruby-mode-hook 'prelude-ruby-mode-defaults)
   (add-hook 'ruby-mode-hook (lambda ()
-                              (run-hooks 'prelude-ruby-mode-hook))))
+                              (run-hooks 'prelude-ruby-mode-hook)))
+
+  (add-hook 'ruby-mode-hook 'eglot-ensure))
 
 (provide 'prelude-ruby)
 ;;; prelude-ruby.el ends here

@@ -7,19 +7,14 @@
 ;; for clang formatting to work, create a clang-format file in project folder:
 ;; > clang-format -style=llvm -dump-config > .clang-format
 
-(require 'prelude-lsp)
 (require 'prelude-programming)
 
 
 ;; c, cpp hooks
 (defun prelude-c-mode-common-defaults ()
-  (add-hook 'before-save-hook #'lsp-format-buffer t t)
-  (lsp))
+  (add-hook 'before-save-hook #'eglot-format-buffer t t))
 
 (setq prelude-c-mode-common-hook 'prelude-c-mode-common-defaults)
-
-;; enable clang-tidy in lsp
-(setq lsp-clients-clangd-args '("--clang-tidy"))
 
 (add-hook 'c-mode-hook (lambda ()
                          (run-hooks 'prelude-c-mode-common-hook)))
@@ -36,3 +31,6 @@
 
 (add-hook 'makefile-mode-hook (lambda ()
                                 (run-hooks 'prelude-makefile-mode-hook)))
+
+(add-hook 'c-mode-hook 'eglot-ensure)
+(add-hook 'c++-mode-hook 'eglot-ensure)
