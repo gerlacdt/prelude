@@ -1,4 +1,3 @@
-(require 'prelude-lsp)
 (require 'prelude-programming)
 (require 'go-projectile)
 
@@ -16,25 +15,10 @@
 
   (add-hook 'go-mode-hook #'tree-sitter-mode)
   (add-hook 'go-mode-hook #'tree-sitter-hl-mode)
-  (defun prelude-go-mode-defaults ()
-    ;; lsp config
-    (setq lsp-enable-snippet t
-          lsp-enable-symbol-highlighting t
-          lsp-ui-flycheck-enable t
-          lsp-ui-doc-enable t
-          lsp-ui-doc-show-with-mouse nil
-          lsp-ui-doc-show-with-cursor t)
-    (lsp-register-custom-settings
-     '(("gopls.completeUnimported" t t)
-       ("gopls.staticcheck" t t)))
-    (lsp)
 
-    ;; my defaults
+  (defun prelude-go-mode-defaults ()
     (setq tab-width 4)
     (setq indent-tabs-mode 1)
-    (let ((map go-mode-map))
-      (define-key map (kbd "M-.") 'lsp-ui-peek-find-definitions)
-      (define-key map (kbd "M-?") 'lsp-ui-peek-find-references))
 
     ;; stop whitespace being highlighted
     (whitespace-toggle-options '(tabs))
@@ -43,14 +27,12 @@
     (yas-minor-mode)
 
     ;; CamelCase aware editing operations
-    (subword-mode +1))
+    (subword-mode +1)
 
-  (defun lsp-go-install-save-hooks ()
-    (add-hook 'before-save-hook #'lsp-format-buffer t t)
-    (add-hook 'before-save-hook #'lsp-organize-imports t t))
-  (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
+    (add-hook 'before-save-hook #'eglot-format-buffer t t))
 
   (setq prelude-go-mode-hook 'prelude-go-mode-defaults)
-
   (add-hook 'go-mode-hook (lambda ()
-                            (run-hooks 'prelude-go-mode-hook))))
+                            (run-hooks 'prelude-go-mode-hook)))
+
+  (add-hook 'go-mode-hook 'eglot-ensure))
