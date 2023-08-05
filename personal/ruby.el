@@ -10,7 +10,6 @@
 
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
-(require 'myeglot)
 
 ;; We never want to edit Rubinius bytecode
 (add-to-list 'completion-ignored-extensions ".rbc")

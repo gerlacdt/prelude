@@ -20,7 +20,6 @@
 
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
-(require 'myeglot)
 
 ;; Copy pasted from ruby-mode.el
 (defun prelude-python--encoding-comment-required-p ()

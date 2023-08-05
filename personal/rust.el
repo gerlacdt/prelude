@@ -19,7 +19,6 @@
                             tree-sitter-langs
                             ron-mode))
 
-(require 'myeglot)
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
 

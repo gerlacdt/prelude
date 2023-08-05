@@ -5,8 +5,6 @@
 
 (prelude-require-packages '(yaml-mode))
 
-(require 'myeglot)
-
 (with-eval-after-load 'yaml-mode
   (defun prelude-yaml-mode-defaults ()
     ;; CamelCase aware editing operations

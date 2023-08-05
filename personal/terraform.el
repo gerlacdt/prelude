@@ -2,7 +2,6 @@
 
 (prelude-require-packages '(terraform-mode))
 
-(require 'myeglot)
 
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs

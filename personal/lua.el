@@ -11,7 +11,6 @@
 
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
-(require 'myeglot)
 
 
 (defun prelude-lua-mode-defaults ()

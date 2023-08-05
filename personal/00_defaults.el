@@ -19,6 +19,14 @@
 
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
+(require 'eglot)
+
+;; eglot keybindings
+(define-key eglot-mode-map (kbd "C-c C-l r") 'eglot-rename)
+(define-key eglot-mode-map (kbd "C-c C-l o") 'eglot-code-action-organize-imports)
+(define-key eglot-mode-map (kbd "C-c C-l h") 'eldoc-doc-buffer)
+(define-key eglot-mode-map (kbd "C-c C-l a") 'eglot-code-actions)
+
 
 ;; hide warnings
 (setq native-comp-async-report-warnings-errors nil)
