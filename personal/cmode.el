@@ -9,7 +9,6 @@
 
 (require 'prelude-programming)
 
-
 ;; c, cpp hooks
 (defun prelude-c-mode-common-defaults ()
   (add-hook 'before-save-hook #'eglot-format-buffer t t))
