@@ -5,7 +5,8 @@
 (prelude-require-packages '(inf-ruby
                             yari
                             tree-sitter
-                            tree-sitter-langs))
+                            tree-sitter-langs
+                            rubocop))
 
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
@@ -26,9 +27,7 @@
     (setq ruby-insert-encoding-magic-comment nil)
     (inf-ruby-minor-mode +1)
     ;; CamelCase aware editing operations
-    (subword-mode +1)
-
-    (add-hook 'before-save-hook #'eglot-format-buffer t t))
+    (subword-mode +1))
 
   (setq prelude-ruby-mode-hook 'prelude-ruby-mode-defaults)
   (add-hook 'ruby-mode-hook (lambda ()
