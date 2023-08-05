@@ -13,8 +13,7 @@
 (require 'electric)
 (require 'prelude-programming)
 
-(prelude-require-packages '(lsp-pyright
-                            blacken
+(prelude-require-packages '(blacken
                             tree-sitter
                             tree-sitter-langs))
 
@@ -63,24 +62,8 @@
 
 (defun prelude-python-mode-defaults ()
   "Defaults for Python programming."
-  (require 'lsp-pyright)
   (blacken-mode)
-  (setq lsp-enable-snippet nil
-        lsp-ui-sideline-show-diagnostics t
-        lsp-ui-sideline-show-hover t
-        lsp-ui-sideline-show-code-actions t
-        lsp-headerline-breadcrumb-enable t
-        lsp-ui-flycheck-enable t
-        lsp-ui-doc-enable t
-        lsp-ui-doc-show-with-cursor t
-        lsp-ui-doc-show-with-mouse nil)
-  (lsp)
-  (add-hook 'before-save-hook #'lsp-organize-imports t t)
   (subword-mode +1)
-  (eldoc-mode 1)
-  (let ((map python-mode-map))
-    (define-key map (kbd "M-.") 'lsp-ui-peek-find-definitions)
-    (define-key map (kbd "M-?") 'lsp-ui-peek-find-references))
   (setq-local electric-layout-rules
               '((?: . (lambda ()
                         (and (zerop (first (syntax-ppss)))
@@ -94,11 +77,12 @@
   (add-hook 'after-save-hook 'prelude-python-mode-set-encoding nil 'local))
 
 (setq prelude-python-mode-hook 'prelude-python-mode-defaults)
+(add-hook 'python-mode-hook (lambda ()
+                              (run-hooks 'prelude-python-mode-hook)))
 
 (add-hook 'python-mode-hook #'tree-sitter-mode)
 (add-hook 'python-mode-hook #'tree-sitter-hl-mode)
-(add-hook 'python-mode-hook (lambda ()
-                              (run-hooks 'prelude-python-mode-hook)))
+(add-hook 'python-mode-hook 'eglot-ensure)
 
 ;; set ipython as default shell
 (setq python-shell-interpreter "ipython"
