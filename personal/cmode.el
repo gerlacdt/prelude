@@ -8,6 +8,7 @@
 ;; > clang-format -style=llvm -dump-config > .clang-format
 
 (require 'prelude-programming)
+(require 'myeglot)
 
 ;; c, cpp hooks
 (defun prelude-c-mode-common-defaults ()

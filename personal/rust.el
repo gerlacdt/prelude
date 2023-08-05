@@ -19,8 +19,10 @@
                             tree-sitter-langs
                             ron-mode))
 
+(require 'myeglot)
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
+
 
 (with-eval-after-load 'rust-mode
   (add-hook 'rust-mode-hook 'cargo-minor-mode)

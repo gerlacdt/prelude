@@ -11,6 +11,7 @@
 (require 'typescript-mode)
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
+(require 'myeglot)
 
 
 (with-eval-after-load 'typescript-mode

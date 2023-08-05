@@ -7,6 +7,7 @@
 
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
+(require 'myeglot)
 
 ;; Ignore go test -c output files
 (add-to-list 'completion-ignored-extensions ".test")
