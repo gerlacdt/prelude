@@ -107,16 +107,14 @@
 (setq gdb-use-separate-io-buffer t)
 (setq compilation-scroll-output t)
 
-;; org-mode
+
+;; yasnippet, <TAB> expands snippet
 (require 'yasnippet)
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (yas-reload-all)
-(define-key yas-minor-mode-map (kbd "<tab>") nil)
-(define-key yas-minor-mode-map (kbd "TAB") nil)
 
-;; need to disable GNOME keybinding in settings -> keyboard
-(define-key yas-minor-mode-map (kbd "s-<tab>") #'yas-expand)
 
+;; org-mode
 (setq org-startup-folded nil)
 (setq org-log-done t)
 (setq org-image-actual-width nil)
