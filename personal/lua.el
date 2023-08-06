@@ -1,16 +1,8 @@
-(require 'prelude-programming)
-
 ;;; prerequisites: lua-language-server
 ;;; https://github.com/LuaLS/lua-language-server
 ;;; create bash wrapper script https://github.com/LuaLS/lua-language-server/wiki/Getting-Started#command-line
 
-(prelude-require-packages '(lua-mode
-                            tree-sitter
-                            tree-sitter-langs))
-
-
-(require 'tree-sitter)
-(require 'tree-sitter-langs)
+(prelude-require-packages '(lua-mode))
 
 
 (defun prelude-lua-mode-defaults ()

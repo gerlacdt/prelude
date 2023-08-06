@@ -1,5 +1,3 @@
-(require 'prelude-programming)
-
 ;;; prerequisites: yaml-language-server
 ;;; npm install -g yaml-language-server
 

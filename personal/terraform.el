@@ -1,5 +1,3 @@
-(require 'prelude-programming)
-
 (prelude-require-packages '(terraform-mode))
 
 

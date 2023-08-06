@@ -7,7 +7,6 @@
 ;; for clang formatting to work, create a clang-format file in project folder:
 ;; > clang-format -style=llvm -dump-config > .clang-format
 
-(require 'prelude-programming)
 
 ;; c, cpp hooks
 (defun prelude-c-mode-common-defaults ()

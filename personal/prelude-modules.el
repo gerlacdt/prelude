@@ -12,6 +12,7 @@
 ;; (require 'prelude-evil)
 
 ;;; Programming languages support
+(require 'prelude-programming)
 ;; (require 'prelude-c)
 (require 'prelude-clojure)
 ;; (require 'prelude-coffee)

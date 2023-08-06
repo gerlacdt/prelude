@@ -1,12 +1,6 @@
-(require 'prelude-programming)
+(prelude-require-packages '(go-mode))
+
 (require 'go-projectile)
-
-(prelude-require-packages '(go-mode
-                            tree-sitter
-                            tree-sitter-langs))
-
-(require 'tree-sitter)
-(require 'tree-sitter-langs)
 
 ;; Ignore go test -c output files
 (add-to-list 'completion-ignored-extensions ".test")

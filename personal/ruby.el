@@ -1,15 +1,8 @@
-(require 'prelude-programming)
-
 ;;; prerequisites: gem install solargraph rubocop
-
 (prelude-require-packages '(inf-ruby
                             yari
-                            tree-sitter
-                            tree-sitter-langs
                             rubocop))
 
-(require 'tree-sitter)
-(require 'tree-sitter-langs)
 
 ;; We never want to edit Rubinius bytecode
 (add-to-list 'completion-ignored-extensions ".rbc")

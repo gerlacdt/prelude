@@ -1,17 +1,10 @@
 (prelude-require-packages '(js2-mode
                             json-mode
                             prettier-js
-                            tree-sitter
-                            tree-sitter-langs
                             tide
                             typescript-mode))
 
-
-(require 'prelude-programming)
 (require 'typescript-mode)
-(require 'tree-sitter)
-(require 'tree-sitter-langs)
-
 
 (with-eval-after-load 'typescript-mode
   (defun prelude-ts-mode-defaults ()

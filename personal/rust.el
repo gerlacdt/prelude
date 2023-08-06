@@ -1,5 +1,3 @@
-(require 'prelude-programming)
-
 ;; You may need to install the following packages on your system:
 ;; * rustc (Rust Compiler)
 ;; * cargo (Rust Package Manager)
@@ -15,12 +13,7 @@
 (prelude-require-packages '(rust-mode
                             cargo
                             flycheck-rust
-                            tree-sitter
-                            tree-sitter-langs
                             ron-mode))
-
-(require 'tree-sitter)
-(require 'tree-sitter-langs)
 
 
 (with-eval-after-load 'rust-mode

@@ -10,16 +10,9 @@
 ;; max-line-length = 88
 ;; extend-ignore = E203
 
+(prelude-require-packages '(blacken))
+
 (require 'electric)
-(require 'prelude-programming)
-
-(prelude-require-packages '(blacken
-                            tree-sitter
-                            tree-sitter-langs))
-
-
-(require 'tree-sitter)
-(require 'tree-sitter-langs)
 
 ;; Copy pasted from ruby-mode.el
 (defun prelude-python--encoding-comment-required-p ()
