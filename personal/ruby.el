@@ -10,9 +10,12 @@
 ;; Map yari to C-h R
 (define-key 'help-command (kbd "R") 'yari)
 
+(setq rubocop-autocorrect-on-save t)
+
 (with-eval-after-load 'ruby-mode
   (add-hook 'ruby-mode-hook #'tree-sitter-mode)
   (add-hook 'ruby-mode-hook #'tree-sitter-hl-mode)
+  (add-hook 'ruby-mode-hook #'rubocop-mode)
 
   (defun prelude-ruby-mode-defaults ()
     ;; Don't auto-insert encoding comments
