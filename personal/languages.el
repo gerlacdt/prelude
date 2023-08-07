@@ -1,6 +1,3 @@
-(require 'prelude-common-lisp)
-(require 'prelude-scheme)
-
 ;; common lisp
 (setq inferior-lisp-program "/usr/local/bin/sbcl --noinform")
 ;; Also setup the slime-fancy contrib
@@ -14,11 +11,8 @@
                                (define-key map (kbd "M-_") 'undo-tree-redo))))
 
 
-;; scheme
-(add-hook 'scheme-mode-hook 'geiser-mode)
-(setq geiser-active-implementations '(racket))
-(setq scheme-program-name "racket -il xrepl")
-(add-hook 'geiser-repl-mode-hook (lambda () (smartparens-mode)))
+;; racket
+(add-hook 'racket-repl-mode-hook (lambda () (smartparens-mode)))
 
 ;; latex and flyspell
 (setq-default ispell-program-name "aspell")

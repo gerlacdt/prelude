@@ -26,6 +26,7 @@
 (require 'prelude-js)
 (require 'prelude-latex)
 (require 'prelude-lisp)
+
 ;; (require 'prelude-lsp)
 ;; (require 'prelude-ocaml)
 ;; (require 'prelude-org) ;; Org-mode helps you keep TODO lists, notes and more
@@ -34,7 +35,7 @@
 ;; (require 'prelude-ruby)
 ;; (require 'prelude-rust)
 ;; (require 'prelude-scala)
-(require 'prelude-scheme)
+(require 'prelude-racket)
 (require 'prelude-shell)
 ;; (require 'prelude-scss)
 (require 'prelude-web) ;; Emacs mode for web templates
