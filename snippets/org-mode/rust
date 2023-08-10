@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: rust
+# key: rust
+# --
+#+BEGIN_SRC rust
+$0
+#+END_SRC
