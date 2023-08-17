@@ -1,11 +1,11 @@
 (prelude-require-packages '(terraform-mode))
 
 
-;; (with-eval-after-load 'eglot
-;;   (add-to-list 'eglot-server-programs
-;;                '((terraform-mode)
-;;                  . ("terraform-ls"
-;;                     "serve"))))
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+               '((terraform-mode)
+                 . ("terraform-ls"
+                    "serve"))))
 
 (with-eval-after-load 'terraform-mode
   (add-hook 'terraform-mode-hook #'tree-sitter-mode)
@@ -20,7 +20,7 @@
   (add-hook 'terraform-mode-hook (lambda ()
                                    (run-hooks 'prelude-terraform-mode-hook)))
 
-  ;; (add-hook 'terraform-mode-hook 'eglot-ensure)
+  (add-hook 'terraform-mode-hook 'eglot-ensure)
   )
 
 (provide 'prelude-terraform)
