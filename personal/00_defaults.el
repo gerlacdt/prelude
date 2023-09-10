@@ -132,6 +132,7 @@
 
 ;; ivy settings
 (global-set-key (kbd "C-c a") 'counsel-rg)
+(global-set-key (kbd "M-g i") 'counsel-imenu)
 (setq ivy-height 20)
 (define-key ivy-minibuffer-map
   (kbd "C-w") 'ivy-yank-word)
