@@ -203,3 +203,21 @@
 (global-unset-key (kbd "C-+"))
 (global-set-key (kbd "<f6>") 'text-scale-increase)
 (global-set-key (kbd "<f5>") 'text-scale-decrease)
+
+;; active spell checking for org-mode and markdown-mode
+(add-hook 'org-mode-hook 'flyspell-mode)
+(add-hook 'markdown-mode-hook 'flyspell-mode)
+
+;; web-mode
+(setq web-mode-enable-auto-closing t)
+
+;; latex and flyspell
+(setq-default ispell-program-name "aspell")
+(add-hook 'LaTeX-mode-hook 'tex-pdf-mode)
+(add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
+(setq ispell-dictionary "en")
+(setq ispell-default-dictionary "en")
+(setq flyspell-default-dictionary "en")
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+;; (setq flyspell-issue-welcome-flag nil) ;; fix for Ubuntu 10.10 problem
+(add-hook 'flyspell-mode-hook 'flyspell-buffer)
