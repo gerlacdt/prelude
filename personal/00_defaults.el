@@ -200,6 +200,10 @@
 
 ;; configure expand region
 (global-set-key (kbd "C--") 'er/contract-region)
+(global-set-key (kbd "C-c (") 'er/mark-inside-pairs)
+(global-set-key (kbd "C-c )") 'er/mark-outside-pairs)
+(global-set-key (kbd "C-c '") 'er/mark-inside-quotes)
+(global-set-key (kbd "C-c \"") 'er/mark-outside-quotes)
 
 ;; configure text-scale
 (global-unset-key (kbd "C-+"))
