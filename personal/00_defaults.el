@@ -39,8 +39,7 @@
 (defvar gerlacdt/font "FiraCode Nerd Font-12")
 
 ;; UTF-8 as default encoding
-(set-language-environment "UTF-8")
-(set-default-coding-systems 'utf-8)
+(set-locale-environment "en_US.UTF-8")
 
 (when (eq system-type 'gnu/linux)
   ;; do nothing
