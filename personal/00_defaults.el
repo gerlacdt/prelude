@@ -21,6 +21,12 @@
 (require 'tree-sitter-langs)
 (require 'eglot)
 
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+               `(python-mode . ,(eglot-alternatives
+                                 '(("ruff" "server")
+                                   ("pyright-langserver" "--stdio"))))))
+
 ;; eglot keybindings
 (define-key eglot-mode-map (kbd "C-c C-l r") 'eglot-rename)
 (define-key eglot-mode-map (kbd "C-c C-l o") 'eglot-code-action-organize-imports)

@@ -3,14 +3,8 @@
 ;;
 ;; requires the following packages:
 ;; npm i -g pyright
-;; pip install black
+;; pip install ruff
 ;; pip install ipython
-;; add $HOME/.flake file, with content (required for black with 88 chars per line):
-;; [flake8]
-;; max-line-length = 88
-;; extend-ignore = E203
-
-(prelude-require-packages '(blacken))
 
 (require 'electric)
 
@@ -55,7 +49,6 @@
 
 (defun prelude-python-mode-defaults ()
   "Defaults for Python programming."
-  (blacken-mode)
   (subword-mode +1)
   (setq-local electric-layout-rules
               '((?: . (lambda ()
@@ -67,6 +60,7 @@
                 #'python-imenu-create-flat-index))
   (add-hook 'post-self-insert-hook
             #'electric-layout-post-self-insert-function nil 'local)
+  (add-hook 'after-save-hook 'eglot-format)
   (add-hook 'after-save-hook 'prelude-python-mode-set-encoding nil 'local))
 
 (setq prelude-python-mode-hook 'prelude-python-mode-defaults)
@@ -85,5 +79,4 @@
              (smartparens-mode)))
 
 
-(setq flycheck-flake8rc "~/.flake") ; set compatible black formatting rules
 (setq flycheck-python-pycompile-executable "python3")
