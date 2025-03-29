@@ -1,11 +1,11 @@
-(prelude-require-packages '(go-mode))
-
 (require 'go-projectile)
 
 ;; Ignore go test -c output files
 (add-to-list 'completion-ignored-extensions ".test")
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
+(add-to-list 'auto-mode-alist '("/go\\.mod\\'" . go-mod-ts-mode))
 
-(with-eval-after-load 'go-mode
+(with-eval-after-load 'go-ts-mode
 
   (defun prelude-go-mode-defaults ()
     (setq tab-width 4)
@@ -23,7 +23,7 @@
     (add-hook 'before-save-hook #'eglot-format-buffer t t))
 
   (setq prelude-go-mode-hook 'prelude-go-mode-defaults)
-  (add-hook 'go-mode-hook (lambda ()
+  (add-hook 'go-ts-mode-hook (lambda ()
                             (run-hooks 'prelude-go-mode-hook)))
 
-  (add-hook 'go-mode-hook 'eglot-ensure))
+  (add-hook 'go-ts-mode-hook 'eglot-ensure))
