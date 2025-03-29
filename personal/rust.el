@@ -15,9 +15,10 @@
                             flycheck-rust
                             ron-mode))
 
+(setq rust-mode-treesitter-derive t)
 
-(with-eval-after-load 'rust-mode
-  (add-hook 'rust-mode-hook 'cargo-minor-mode)
+(with-eval-after-load 'rust-ts-mode
+  (add-hook 'rust-ts-mode-hook 'cargo-minor-mode)
   (add-hook 'flycheck-mode-hook 'flycheck-rust-setup)
 
   (defun prelude-rust-mode-defaults ()
@@ -34,10 +35,9 @@
     (subword-mode +1))
 
   (setq prelude-rust-mode-hook 'prelude-rust-mode-defaults)
-  (add-hook 'rust-mode-hook (lambda ()
+  (add-hook 'rust-ts-mode-hook (lambda ()
                               (run-hooks 'prelude-rust-mode-hook)))
-
-  (add-hook 'rust-mode-hook 'eglot-ensure))
+  (add-hook 'rust-ts-mode-hook 'eglot-ensure))
 
 (provide 'prelude-rust)
 ;;; prelude-rust.el ends here
