@@ -8,8 +8,6 @@
                     "serve"))))
 
 (with-eval-after-load 'terraform-mode
-  (add-hook 'terraform-mode-hook #'tree-sitter-mode)
-  (add-hook 'terraform-mode-hook #'tree-sitter-hl-mode)
   (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
 
   (defun prelude-terraform-mode-defaults ()

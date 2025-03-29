@@ -30,8 +30,6 @@
             (lambda () (local-set-key (kbd "M-?") #'tide-references)))
 
 
-  (add-hook 'typescript-mode-hook #'tree-sitter-mode)
-  (add-hook 'typescript-mode-hook #'tree-sitter-hl-mode)
   (add-hook 'typescript-mode-hook (lambda () (run-hooks 'prelude-ts-mode-hook))))
 
 ;; web-mode for reactjs with typescript

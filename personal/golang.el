@@ -7,9 +7,6 @@
 
 (with-eval-after-load 'go-mode
 
-  (add-hook 'go-mode-hook #'tree-sitter-mode)
-  (add-hook 'go-mode-hook #'tree-sitter-hl-mode)
-
   (defun prelude-go-mode-defaults ()
     (setq tab-width 4)
     (setq indent-tabs-mode 1)

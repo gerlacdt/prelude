@@ -12,13 +12,9 @@
                             org-drill
                             prettier-js
                             emojify
-                            tree-sitter
-                            tree-sitter-langs
                             unicode-fonts))
 
 
-(require 'tree-sitter)
-(require 'tree-sitter-langs)
 (require 'eglot)
 
 (with-eval-after-load 'eglot

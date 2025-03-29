@@ -19,8 +19,6 @@
 (with-eval-after-load 'rust-mode
   (add-hook 'rust-mode-hook 'cargo-minor-mode)
   (add-hook 'flycheck-mode-hook 'flycheck-rust-setup)
-  (add-hook 'rust-mode-hook #'tree-sitter-mode)
-  (add-hook 'rust-mode-hook #'tree-sitter-hl-mode)
 
   (defun prelude-rust-mode-defaults ()
     ;; format on save

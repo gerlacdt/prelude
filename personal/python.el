@@ -67,8 +67,6 @@
 (add-hook 'python-mode-hook (lambda ()
                               (run-hooks 'prelude-python-mode-hook)))
 
-(add-hook 'python-mode-hook #'tree-sitter-mode)
-(add-hook 'python-mode-hook #'tree-sitter-hl-mode)
 (add-hook 'python-mode-hook 'eglot-ensure)
 
 ;; set ipython as default shell
