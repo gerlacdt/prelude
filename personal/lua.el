@@ -7,7 +7,7 @@
 
 (defun prelude-lua-mode-defaults ()
   ;; format buffer
-  (add-hook 'before-save-hook #'eglot-format-buffer t t)
+  ;; (add-hook 'before-save-hook #'eglot-format-buffer t t)
 
   ;; CamelCase aware editing operations
   (subword-mode +1))
